@@ -99,10 +99,143 @@ class _securespytwoState extends State<securespytwo> {
       body:Padding(
         padding:EdgeInsets.all(10.0),
         child: ListView(children: <Widget>[
-          container
+          Container(
+            alignment:Alignment.center,
+            padding:EdgeInsets.all(10.0),
+            child:Text("DETAILS",
+            style: TextStyle(
+              fontFamily: "nasa",
+              fontWeight:FontWeight.bold,
+              fontSize:30.0,
+              color:Colors.white,
+              letterSpacing:2.0
+            ),),
+          ),
+          Container(
+            width:10,
+            alignment: Alignment.center,
+            padding:EdgeInsets.all(10.0),
+            child:TextFormField(
+              style: TextStyle(
+                color:Colors.white,
+                fontFamily:"nasa"
+              ),
+              decoration:InputDecoration(
+                border:OutlineInputBorder(),
+                labelText:"first name",
+                labelStyle:TextStyle(
+                  fontFamily:"nasa",
+                  color:Colors.white,
+                ),
+              ),
+              ),
+          ),
+          Container(
+            width: 10.0,
+            alignment:Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child:TextFormField(
+              style:TextStyle(
+                color:Colors.white,
+                fontFamily:"nasa"
+              ),
+              decoration:InputDecoration(
+                border:OutlineInputBorder(),
+                labelText:"last name",
+                labelStyle:TextStyle(
+                  fontFamily:"nasa",
+                  color:Colors.white
+                )
+              ),
+            ),
+          ),
+          Container(
+            width: 10.0,
+            alignment:Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child:TextFormField(
+              style:TextStyle(
+                  color:Colors.white,
+                  fontFamily:"nasa"
+              ),
+              decoration:InputDecoration(
+                  border:OutlineInputBorder(),
+                  labelText:"place",
+                  labelStyle:TextStyle(
+                      fontFamily:"nasa",
+                      color:Colors.white
+                  )
+              ),
+            ),
+          ),
+          Container(
+            width: 10.0,
+            alignment:Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child:TextFormField(
+              style:TextStyle(
+                  color:Colors.white,
+                  fontFamily:"nasa"
+              ),
+              decoration:InputDecoration(
+                  border:OutlineInputBorder(),
+                  labelText:"Date of birth",
+                  labelStyle:TextStyle(
+                      fontFamily:"nasa",
+                      color:Colors.white
+                  )
+              ),
+            ),
+          ),
+          Container(
+            width: 10.0,
+            alignment:Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child:TextFormField(
+              style:TextStyle(
+                  color:Colors.white,
+                  fontFamily:"nasa"
+              ),
+              decoration:InputDecoration(
+                  border:OutlineInputBorder(),
+                  labelText:"Photo",
+                  labelStyle:TextStyle(
+                      fontFamily:"nasa",
+                      color:Colors.white
+                  )
+              ),
+            ),
+          ),
+          Container(
+            height:50.0,
+            padding:EdgeInsets.fromLTRB(10, 0, 10,0),
+            child:RaisedButton(
+              onPressed:(){},
+              child:Text("Save",
+              style:TextStyle(
+                fontFamily:"nasa",
+                fontSize:20.0,
+                fontWeight:FontWeight.bold,
+                color:Colors.white,
+                letterSpacing:2.0
+              ),),
+              color:Colors.grey[700],
+            ),
+          ),
+          Container(
+            alignment:Alignment.center,
+            padding:EdgeInsets.all(10.0),
+            child:Text("\n \n \n HK Group",
+              style: TextStyle(
+                  fontFamily: "nasa",
+                  fontWeight:FontWeight.bold,
+                  fontSize:25.0,
+                  color:Colors.white,
+                  letterSpacing:2.0
+              ),),
+          ),
         ],),
       ),
-
     );
   }
 }
