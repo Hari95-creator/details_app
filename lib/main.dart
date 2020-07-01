@@ -92,7 +92,8 @@ class _securespytwoState extends State<securespytwo> {
       appBar: AppBar(
         title: Text("welcome to secure Id",
         style:TextStyle(
-          fontFamily:"nasa"
+          fontFamily:"nasa",
+          letterSpacing:2.0
         ),),
         backgroundColor:Colors.grey[850],
       ),
@@ -210,7 +211,9 @@ class _securespytwoState extends State<securespytwo> {
             height:50.0,
             padding:EdgeInsets.fromLTRB(10, 0, 10,0),
             child:RaisedButton(
-              onPressed:(){},
+              onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context)=>securespythree()));
+              savedContent(context);
+              },
               child:Text("Save",
               style:TextStyle(
                 fontFamily:"nasa",
@@ -234,11 +237,56 @@ class _securespytwoState extends State<securespytwo> {
                   letterSpacing:2.0
               ),),
           ),
+
         ],),
       ),
     );
   }
 }
+void savedContent(BuildContext context)//popup box
+{
+  var alertDialog = AlertDialog(
+    backgroundColor:Colors.grey,
+    title:Text("saved",
+      style:TextStyle(
+        fontFamily:"nasa",
+        letterSpacing:2.0
+      ),
+    ),
+    content:Text("you are secured now",
+    style:TextStyle(
+      fontFamily:"nasa",
+      letterSpacing:1.0,
+    ),),
+  );
+  showDialog(
+      context:context,
+      builder:(BuildContext context)=>alertDialog
+  );
+}//popupcode
+
+class securespythree extends StatefulWidget {
+  @override
+  _securespythreeState createState() => _securespythreeState();
+}
+
+class _securespythreeState extends State<securespythree> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor:Colors.grey[900],
+      appBar:AppBar(
+        backgroundColor:Colors.grey[850],
+        title:Text("Profiles",
+        style:TextStyle(
+          fontFamily:"nasa",
+          letterSpacing:2.0
+        ),),
+      ),
+    );
+  }
+}
+
 
 
 
