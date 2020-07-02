@@ -1,5 +1,9 @@
+
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 void main()=> runApp(MaterialApp(
   home:securespy() ,
@@ -85,6 +89,13 @@ class securespytwo extends StatefulWidget {
 }
 
 class _securespytwoState extends State<securespytwo> {
+  File image;// adding image code
+  Future getImage() async{
+    var tempImage= await ImagePicker.pickImage(source:ImageSource.gallery);
+    setState(() {
+      image=tempImage;
+    });// image code
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,13 +115,13 @@ class _securespytwoState extends State<securespytwo> {
             alignment:Alignment.center,
             padding:EdgeInsets.all(10.0),
             child:Text("DETAILS",
-            style: TextStyle(
-              fontFamily: "nasa",
-              fontWeight:FontWeight.bold,
-              fontSize:30.0,
-              color:Colors.white,
-              letterSpacing:2.0
-            ),),
+              style: TextStyle(
+                  fontFamily: "nasa",
+                  fontWeight:FontWeight.bold,
+                  fontSize:30.0,
+                  color:Colors.white,
+                  letterSpacing:2.0
+              ),),
           ),
           Container(
             width:10,
@@ -118,8 +129,8 @@ class _securespytwoState extends State<securespytwo> {
             padding:EdgeInsets.all(10.0),
             child:TextFormField(
               style: TextStyle(
-                color:Colors.white,
-                fontFamily:"nasa"
+                  color:Colors.white,
+                  fontFamily:"nasa"
               ),
               decoration:InputDecoration(
                 border:OutlineInputBorder(),
@@ -129,7 +140,7 @@ class _securespytwoState extends State<securespytwo> {
                   color:Colors.white,
                 ),
               ),
-              ),
+            ),
           ),
           Container(
             width: 10.0,
@@ -137,16 +148,16 @@ class _securespytwoState extends State<securespytwo> {
             padding: EdgeInsets.all(10.0),
             child:TextFormField(
               style:TextStyle(
-                color:Colors.white,
-                fontFamily:"nasa"
+                  color:Colors.white,
+                  fontFamily:"nasa"
               ),
               decoration:InputDecoration(
-                border:OutlineInputBorder(),
-                labelText:"last name",
-                labelStyle:TextStyle(
-                  fontFamily:"nasa",
-                  color:Colors.white
-                )
+                  border:OutlineInputBorder(),
+                  labelText:"last name",
+                  labelStyle:TextStyle(
+                      fontFamily:"nasa",
+                      color:Colors.white
+                  )
               ),
             ),
           ),
@@ -189,6 +200,25 @@ class _securespytwoState extends State<securespytwo> {
             ),
           ),
           Container(
+            //alignment:Alignment.centerLeft,
+            padding:EdgeInsets.all(10.0),
+            child: RaisedButton.icon(
+                onPressed:(){
+                  getImage();
+                },
+                icon:Icon(
+                  Icons.add_a_photo
+                ),
+                label:Text("select profile picture",
+                style:TextStyle(
+                  color:Colors.black,
+                  fontFamily:"nasa"
+
+                ),),
+              color:Colors.grey,
+            ),
+          ),
+          /*Container(
             width: 10.0,
             alignment:Alignment.center,
             padding: EdgeInsets.all(10.0),
@@ -206,7 +236,7 @@ class _securespytwoState extends State<securespytwo> {
                   )
               ),
             ),
-          ),
+          ),*/
           Container(
             height:50.0,
             padding:EdgeInsets.fromLTRB(10, 0, 10,0),
@@ -215,13 +245,13 @@ class _securespytwoState extends State<securespytwo> {
               savedContent(context);
               },
               child:Text("Save",
-              style:TextStyle(
-                fontFamily:"nasa",
-                fontSize:20.0,
-                fontWeight:FontWeight.bold,
-                color:Colors.white,
-                letterSpacing:2.0
-              ),),
+                style:TextStyle(
+                    fontFamily:"nasa",
+                    fontSize:20.0,
+                    fontWeight:FontWeight.bold,
+                    color:Colors.white,
+                    letterSpacing:2.0
+                ),),
               color:Colors.grey[700],
             ),
           ),
@@ -240,6 +270,7 @@ class _securespytwoState extends State<securespytwo> {
 
         ],),
       ),
+
     );
   }
 }
