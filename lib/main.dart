@@ -314,6 +314,247 @@ class _securespythreeState extends State<securespythree> {
           letterSpacing:2.0
         ),),
       ),
+      body:Padding(
+        padding:EdgeInsets.all(10.0),
+        child:ListView(children: <Widget>[
+          Card(
+            child:ListTile(
+              leading:Icon(Icons.person),
+                  title:Text("Anto Das",
+                    style:TextStyle(fontFamily:"nasa",
+                    fontSize:16.0,
+                    letterSpacing:2.0,
+                    color:Colors.black)
+                  ),
+
+              trailing:RaisedButton.icon(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>securespytwo()));
+              },
+                  icon:Icon(
+                    Icons.edit,
+                  ),
+                  label:Text("Edit",
+                  style:TextStyle(
+                    fontFamily:"nasa"
+                  ),),
+              ),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>securespyfour()));
+              },
+            ),
+            color:Colors.grey,
+          ),
+    Card(
+    child:ListTile(
+    leading:Icon(Icons.person),
+    title:Text("Athul sreekumar",
+    style:TextStyle(fontFamily:"nasa",
+    fontSize:16.0,
+    letterSpacing:2.0,
+    color:Colors.black)
+    ),
+
+    trailing:RaisedButton.icon(onPressed: (){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>securespytwo()));
+    },
+    icon:Icon(
+    Icons.edit,
+    ),
+    label:Text("Edit",
+    style:TextStyle(
+    fontFamily:"nasa"
+    ),),
+    ),
+    onTap:(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>securespyfour()));
+    },
+    ),
+    color:Colors.grey
+    ),
+          Card(
+              child:ListTile(
+                leading:Icon(Icons.person),
+                title:Text("Hari Krishnan S G",
+                    style:TextStyle(fontFamily:"nasa",
+                        fontSize:16.0,
+                        letterSpacing:2.0,
+                        color:Colors.black)
+                ),
+                trailing:RaisedButton.icon(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespytwo()));
+                },
+                  icon:Icon(
+                    Icons.edit,
+                  ),
+                  label:Text("Edit",
+                    style:TextStyle(
+                        fontFamily:"nasa"
+                    ),),
+                ),
+                onTap:(){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespyfour()));
+                },
+              ),
+              color:Colors.grey
+          ),
+          Card(
+              child:ListTile(
+                leading:Icon(Icons.person),
+                title:Text(" Afsal S",
+                    style:TextStyle(fontFamily:"nasa",
+                        fontSize:16.0,
+                        letterSpacing:2.0,
+                        color:Colors.black)
+                ),
+                trailing:RaisedButton.icon(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespytwo()));
+                },
+                  icon:Icon(
+                    Icons.edit,
+                  ),
+                  label:Text("Edit",
+                    style:TextStyle(
+                        fontFamily:"nasa"
+                    ),),
+                ),
+                onTap:(){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespyfour()));
+                },
+              ),
+              color:Colors.grey
+          ),
+          Card(
+              child:ListTile(
+                leading:Icon(Icons.person),
+                title:Text("Ashish Philip",
+                    style:TextStyle(fontFamily:"nasa",
+                        fontSize:16.0,
+                        letterSpacing:2.0,
+                        color:Colors.black)
+                ),
+                trailing:RaisedButton.icon(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespytwo()));
+                },
+                  icon:Icon(
+                    Icons.edit,
+                  ),
+                  label:Text("Edit",
+                    style:TextStyle(
+                        fontFamily:"nasa"
+                    ),),
+                ),
+                onTap:(){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>securespyfour()));
+                },
+              ),
+              color:Colors.grey
+          ),
+    ],
+        ),
+      ),
+    );
+  }
+}
+class securespyfour extends StatefulWidget {
+  @override
+  _securespyfourState createState() => _securespyfourState();
+}
+
+class _securespyfourState extends State<securespyfour> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        title:Text("Secure Id",
+        style: TextStyle(
+          fontFamily:"nasa",
+        ),),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation:0.0,
+
+      ),
+      body: Padding(
+          padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0,0.0),
+
+          child: Column(
+
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/hi.png"),
+                    radius: 40.0,
+                  ),
+                ),
+                Divider(
+                  height: 90.0,
+                  color: Colors.grey[800],
+                ),
+                Text(
+                  "NAME",
+                  style:TextStyle(
+                    color:Colors.grey,
+                    letterSpacing: 2.0,
+                  ),
+                ),
+                SizedBox(height: 10.0,),
+                Text(
+                  "Anonymus",
+                  style:TextStyle(
+                    color:Colors.amberAccent,
+                    letterSpacing: 2.0,
+                    fontSize:28.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily:"nasa"
+                  ),
+                ),
+                SizedBox(height: 30.0,),
+                Text(
+                  "place",
+                  style:TextStyle(
+                    color:Colors.grey,
+                    letterSpacing: 2.0,
+                    fontFamily:"nasa"
+                  ),
+                ),
+                SizedBox(height: 10.0,),
+                Text(
+                  "No mans Land",
+                  style:TextStyle(
+                    color:Colors.amberAccent,
+                    letterSpacing: 2.0,
+                    fontSize:28.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily:"nasa"
+                  ),
+                ),
+                SizedBox(height:30.0),
+                Text(
+                  "Date of Birth",
+                  style:TextStyle(
+                      color:Colors.grey,
+                      letterSpacing: 2.0,
+                      fontFamily:"nasa"
+                  ),
+                ),
+                SizedBox(height:30.0),
+                Text(
+                  "01/01/2020",
+                  style:TextStyle(
+                      color:Colors.amberAccent,
+                      letterSpacing: 2.0,
+                      fontSize:28.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily:"nasa"
+                  ),
+                ),
+
+              ]
+          )
+      ),
+
     );
   }
 }
