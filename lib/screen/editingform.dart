@@ -7,19 +7,20 @@ import 'package:secure_spy/notifer/detail_notifier.dart';
 import 'package:secure_spy/model/details.dart';
 import 'package:provider/provider.dart';
 
-class securespytwo extends StatefulWidget {
+class securespyfive extends StatefulWidget {
   @override
-  _securespytwoState createState() => _securespytwoState();
+  _securespyfiveState createState() => _securespyfiveState();
 }
 
-class _securespytwoState extends State<securespytwo> {
+class _securespyfiveState extends State<securespyfive> {
 
 
   File _imageFile; // adding image code
   DateTime selectedDate;
 
+
   getImage() async{
-    File imageFile=
+    File imageFile =
     await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50, maxWidth: 400);
     setState(() {
       _imageFile = imageFile;
@@ -45,9 +46,9 @@ class _securespytwoState extends State<securespytwo> {
     {
       _currentUser=detailNotifier.currentUser;
     }else
-      {
+    {
       _currentUser= Detail();
-      }
+    }
   }
 
 
@@ -67,6 +68,14 @@ class _securespytwoState extends State<securespytwo> {
           )),
       //initialValue:_currentState.name,
       maxLength: 20,
+      // ignore: missing_return
+      validator: (String value)
+      {
+        if(value.isEmpty)
+        {
+          return "Name is required";
+        }
+      },
       onSaved: (String value){
         _currentUser.name=value;
       },
@@ -89,6 +98,14 @@ class _securespytwoState extends State<securespytwo> {
           )),
       //initialValue:_currentState.name,
       maxLength: 20,
+      // ignore: missing_return
+      validator: (String value)
+      {
+        if(value.isEmpty)
+        {
+          return "Name is required";
+        }
+      },
       onSaved: (String value){
         _currentUser.place=value;
       },
@@ -125,6 +142,14 @@ class _securespytwoState extends State<securespytwo> {
           )),
       //initialValue:_currentState.phone,
       // ignore: missing_return
+      validator: (String value){
+        if(value.length!=10)
+        {
+          return "mobile number must have 10 digits";
+        }
+        return null;
+      },
+
       onSaved: (String value)
       {
         _currentUser.phone=value;
@@ -147,27 +172,19 @@ class _securespytwoState extends State<securespytwo> {
         backgroundColor:Colors.blueAccent,
       ),
       body:SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(32.0),
         child: Form(
           key: _formkey,
-          autovalidate: true,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height:15),
               _buildName(),
-              SizedBox(height:15),
               _buildPlace(),
-              SizedBox(height:15),
               _buildDob(),
-              SizedBox(height:15),
               _buildPhone(),
-              SizedBox(height: 20),
-              Container(
-                width: 550,
-                height:50.0 ,
-                padding: EdgeInsets.all(0.0),
-              child:RaisedButton.icon(
+              SizedBox(height: 50),
+
+              RaisedButton.icon(
                 onPressed:(){
                   getImage();
                 },
@@ -182,20 +199,23 @@ class _securespytwoState extends State<securespytwo> {
                   ),),
                 color:Colors.grey,
               ),
-              ),
-              SizedBox(height: 20.0),
-              Container(
-                width: 500,
-                height:50.0 ,
-                padding:EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child:RaisedButton(
+
+              SizedBox(height: 50),
+
+              RaisedButton(
+
+                padding:EdgeInsets.fromLTRB(10, 0, 10,0),
                 onPressed:(){
                   _formkey.currentState.save();
-                  uploadDetailAndImage(_currentUser, _imageFile, selectedDate);
+                  editDetailAndImage(_currentUser, _imageFile, selectedDate);
                   Navigator.pushReplacementNamed(context, '/profilepage');
-                savedContent(context);
+                  savedContent(context);
+                  if(_formkey.currentState.validate())
+                  {
+                    return;
+                  }
                 },
-                 child:Text("Save",
+                child:Text("Save",
                   style:TextStyle(
                       fontFamily:"nasa",
                       fontSize:20.0,
@@ -205,20 +225,6 @@ class _securespytwoState extends State<securespytwo> {
                   ),),
                 color:Colors.grey[700],
               ),
-             ),
-              Container(
-                alignment:Alignment.center,
-                padding:EdgeInsets.all(10.0),
-                child:Text("\n \n \n HAI,THIS IS HARI !!",
-                  style: TextStyle(
-                      fontFamily: "nasa",
-                      fontWeight:FontWeight.bold,
-                      fontSize:25.0,
-                      color:Colors.white,
-                      letterSpacing:2.0
-                  ),),
-              ),
-
             ],
           ),
         ),
@@ -237,7 +243,7 @@ void savedContent(BuildContext context)//popup box
           letterSpacing:2.0
       ),
     ),
-    content:Text("your details saved",
+    content:Text("your details changed",
       style:TextStyle(
         fontFamily:"nasa",
         letterSpacing:1.0,
